@@ -25,7 +25,7 @@ more detail you can find in `log/micro_batch_train/2_layer_aggre_lstm_batch_12.l
 
 ## For different layers  
 
-### Buffalo  
+ 
 - Figure 2 (b)  
 The result of mini batch train wiith different layers are located in `log/mini_batch_train/layers/`  
 You can find the cuda memory consumption of different model layers (Graph SAGE model +lstm aggreagtor, OGBN-arxiv)
