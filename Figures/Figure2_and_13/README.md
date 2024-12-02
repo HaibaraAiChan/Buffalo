@@ -13,7 +13,7 @@ Pool ggreagator: 8.9GB the last line in log/mini_batch_train/aggregators/2_layer
 Lstm aggregator: OOM  
 
 
-- Micro batch train  
+- Micro batch train (Buffalo) 
 
 To get the result of Figure 13 (a)   
 Micro batch train can finish GraphSAGE model + lstm aggregator train without OOM.   
@@ -25,7 +25,7 @@ more detail you can find in `log/micro_batch_train/2_layer_aggre_lstm_batch_12.l
 
 ## For different layers  
 
-### mini batch train  
+### Buffalo  
 - Figure 2 (b)  
 The result of mini batch train wiith different layers are located in `log/mini_batch_train/layers/`  
 You can find the cuda memory consumption of different model layers (Graph SAGE model +lstm aggreagtor, OGBN-arxiv)
