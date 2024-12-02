@@ -1,0 +1,343 @@
+main start at this time 1733036839.8949995
+-----------------------------------------before load data 
+ Nvidia-smi: 0.3560791015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+#nodes: 2449029
+#edges: 123718024
+#classes: 47
+success----------------------------------------
+# Nodes: 2400608
+# Edges: 123718024
+# Train: 196571
+# Val: 39255
+# Test: 2164782
+# Classes: 47
+
+----------------------------------------start of run function 
+ Nvidia-smi: 0.3560791015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+in feats:  100
+----------------------------------------before model to device 
+ Nvidia-smi: 0.3560791015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+----------------------------------------after model to device
+ Nvidia-smi: 0.51904296875 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+----------------------------------------before generate dataloader block 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+REG start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+Convert a graph into a bidirected graph: 3.632 seconds, peak memory: 23.874 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 23.874 GB
+Metis partitioning: 13.667 seconds, peak memory: 25.064 GB
+Split the graph: 2.874 seconds
+Construct subgraphs: 0.540 seconds
+REG metis partition end ----................................
+REG construction  time spent:  69.74049925804138
+pure dgl.metis_partition the time spent:  20.780184984207153
+
+block_gen_time in "generate_blocks_for_one_layer_block"  10.733945846557617
+
+
+block_gen_time in "generate_blocks_for_one_layer_block"  34.24508619308472
+
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+connection checking time:  20.560261487960815
+block generation total time  44.979032039642334
+average batch blocks generation time:  1.8741263349850972
+block dataloader generation time/epoch 160.7577521800995
+----------------------------------------before generate dataloader block 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+REG start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+Convert a graph into a bidirected graph: 3.562 seconds, peak memory: 27.478 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 27.478 GB
+Metis partitioning: 13.708 seconds, peak memory: 28.605 GB
+Split the graph: 3.744 seconds
+Construct subgraphs: 0.483 seconds
+REG metis partition end ----................................
+REG construction  time spent:  74.67142343521118
+pure dgl.metis_partition the time spent:  21.547687768936157
+
+block_gen_time in "generate_blocks_for_one_layer_block"  8.272167921066284
+
+
+block_gen_time in "generate_blocks_for_one_layer_block"  24.332151651382446
+
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+connection checking time:  19.86070156097412
+block generation total time  32.60431957244873
+average batch blocks generation time:  1.358513315518697
+block dataloader generation time/epoch 156.98917400836945
+----------------------------------------before generate dataloader block 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+REG start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+Convert a graph into a bidirected graph: 3.416 seconds, peak memory: 29.432 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 29.432 GB
+Metis partitioning: 13.524 seconds, peak memory: 29.432 GB
+Split the graph: 2.850 seconds
+Construct subgraphs: 0.447 seconds
+REG metis partition end ----................................
+REG construction  time spent:  74.79710030555725
+pure dgl.metis_partition the time spent:  20.28662872314453
+
+block_gen_time in "generate_blocks_for_one_layer_block"  11.161781549453735
+
+
+block_gen_time in "generate_blocks_for_one_layer_block"  25.351600885391235
+
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+connection checking time:  19.145833253860474
+block generation total time  36.51338243484497
+average batch blocks generation time:  1.521390934785207
+block dataloader generation time/epoch 156.4156178633372
+----------------------------------------before generate dataloader block 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+REG start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+Convert a graph into a bidirected graph: 3.468 seconds, peak memory: 29.615 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 29.615 GB
+Metis partitioning: 13.553 seconds, peak memory: 29.615 GB
+Split the graph: 3.194 seconds
+Construct subgraphs: 0.507 seconds
+REG metis partition end ----................................
+REG construction  time spent:  73.7016212940216
+pure dgl.metis_partition the time spent:  20.771360874176025
+
+block_gen_time in "generate_blocks_for_one_layer_block"  7.876650810241699
+
+
+block_gen_time in "generate_blocks_for_one_layer_block"  25.321533679962158
+
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+connection checking time:  19.79061722755432
+block generation total time  33.19818449020386
+average batch blocks generation time:  1.3832576870918274
+block dataloader generation time/epoch 155.45884138345718
+----------------------------------------before generate dataloader block 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+REG start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+Convert a graph into a bidirected graph: 3.460 seconds, peak memory: 29.973 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 29.973 GB
+Metis partitioning: 14.070 seconds, peak memory: 30.052 GB
+Split the graph: 3.261 seconds
+Construct subgraphs: 1.001 seconds
+REG metis partition end ----................................
+REG construction  time spent:  73.5999345779419
+pure dgl.metis_partition the time spent:  21.841838359832764
+
+block_gen_time in "generate_blocks_for_one_layer_block"  7.7761688232421875
+
+
+block_gen_time in "generate_blocks_for_one_layer_block"  24.568416357040405
+
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+connection checking time:  19.019773960113525
+block generation total time  32.34458518028259
+average batch blocks generation time:  1.3476910491784413
+block dataloader generation time/epoch 154.7573205471039
+----------------------------------------before generate dataloader block 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+REG start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+Convert a graph into a bidirected graph: 3.475 seconds, peak memory: 30.363 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 30.363 GB
+Metis partitioning: 13.429 seconds, peak memory: 30.363 GB
+Split the graph: 2.829 seconds
+Construct subgraphs: 0.479 seconds
+REG metis partition end ----................................
+REG construction  time spent:  77.13913440704346
+pure dgl.metis_partition the time spent:  20.26157236099243
+
+block_gen_time in "generate_blocks_for_one_layer_block"  9.304941415786743
+
+
+block_gen_time in "generate_blocks_for_one_layer_block"  25.932848930358887
+
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+connection checking time:  19.085490226745605
+block generation total time  35.23779034614563
+average batch blocks generation time:  1.4682412644227345
+block dataloader generation time/epoch 155.02896658579508
+----------------------------------------before generate dataloader block 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+REG start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+Convert a graph into a bidirected graph: 3.542 seconds, peak memory: 30.363 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 30.363 GB
+Metis partitioning: 13.927 seconds, peak memory: 30.363 GB
+Split the graph: 2.787 seconds
+Construct subgraphs: 0.580 seconds
+REG metis partition end ----................................
+REG construction  time spent:  73.45506048202515
+pure dgl.metis_partition the time spent:  20.884963750839233
+
+block_gen_time in "generate_blocks_for_one_layer_block"  10.362243413925171
+
+
+block_gen_time in "generate_blocks_for_one_layer_block"  32.277201652526855
+
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+connection checking time:  22.56674075126648
+block generation total time  42.639445066452026
+average batch blocks generation time:  1.776643544435501
+block dataloader generation time/epoch 156.37144463402885
+----------------------------------------before generate dataloader block 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+REG start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+Convert a graph into a bidirected graph: 3.530 seconds, peak memory: 30.363 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 30.363 GB
+Metis partitioning: 13.356 seconds, peak memory: 30.363 GB
+Split the graph: 3.151 seconds
+Construct subgraphs: 0.491 seconds
+REG metis partition end ----................................
+REG construction  time spent:  74.18868279457092
+pure dgl.metis_partition the time spent:  20.576988220214844
+
+block_gen_time in "generate_blocks_for_one_layer_block"  7.4601500034332275
+
+
+block_gen_time in "generate_blocks_for_one_layer_block"  25.184479475021362
+
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+connection checking time:  19.087445974349976
+block generation total time  32.64462947845459
+average batch blocks generation time:  1.360192894935608
+block dataloader generation time/epoch 155.75241312384605
+----------------------------------------before generate dataloader block 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+REG start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+Convert a graph into a bidirected graph: 3.448 seconds, peak memory: 30.401 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 30.401 GB
+Metis partitioning: 13.437 seconds, peak memory: 30.401 GB
+Split the graph: 3.025 seconds
+Construct subgraphs: 0.472 seconds
+REG metis partition end ----................................
+REG construction  time spent:  72.86036205291748
+pure dgl.metis_partition the time spent:  20.430158615112305
+
+block_gen_time in "generate_blocks_for_one_layer_block"  7.327371120452881
+
+
+block_gen_time in "generate_blocks_for_one_layer_block"  24.99987816810608
+
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+connection checking time:  18.852770805358887
+block generation total time  32.32724928855896
+average batch blocks generation time:  1.3469687203566234
+block dataloader generation time/epoch 154.9945341481103
+----------------------------------------before generate dataloader block 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+REG start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+Convert a graph into a bidirected graph: 3.372 seconds, peak memory: 30.401 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 30.401 GB
+Metis partitioning: 13.126 seconds, peak memory: 30.401 GB
+Split the graph: 3.053 seconds
+Construct subgraphs: 0.341 seconds
+REG metis partition end ----................................
+REG construction  time spent:  72.0227792263031
+pure dgl.metis_partition the time spent:  19.940460443496704
+
+block_gen_time in "generate_blocks_for_one_layer_block"  7.401616811752319
+
+
+block_gen_time in "generate_blocks_for_one_layer_block"  24.773616552352905
+
+-----------------------------------------after block dataloader generation 
+ Nvidia-smi: 0.52099609375 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+connection checking time:  18.990309715270996
+block generation total time  32.175233364105225
+average batch blocks generation time:  1.3406347235043843
+block dataloader generation time/epoch 154.2678326368332
