@@ -1,6 +1,11 @@
-To denote the trend of the reduction of memory consumption and increase of training time as we increase the number of batches, we use figures 10 (a) and (d) as examples: a 3-layer GraphSAGE + LSTM aggregator on Cora and a 2-layer GraphSAGE + LSTM aggregator on ogbn-arxiv with different numbers of batches.  
+To denote the trend of the reduction of memory consumption and increase of training time as we increase the number of batches, we use figures 10 (d) as an example: a 2-layer GraphSAGE + LSTM aggregator on ogbn-arxiv with different numbers of batches.  
 
-### Cora GraphSAGE  
+
+
+
+<!-- To denote the trend of the reduction of memory consumption and increase of training time as we increase the number of batches, we use figures 10 (a) and (d) as examples: a 3-layer GraphSAGE + LSTM aggregator on Cora and a 2-layer GraphSAGE + LSTM aggregator on ogbn-arxiv with different numbers of batches.   -->
+
+<!-- ### Cora GraphSAGE  
 
 - Fan-out: 10, 25, 30  
 - Hidden units: 2048  
@@ -17,7 +22,7 @@ After running `./run_buffalo_cora.sh`, you can obtain the results for full batch
 |    |   Full Batch  |      2 Micro Batches |     3 Micro Batches |     4 Micro Batches |     5 Micro Batches |    6 Micro Batches |  
 |----|---------------|----------------------|----------------------|----------------------|----------------------|---------------------|  
 | Average End-to-End Time per Epoch |     0.74 |   1.19 |    1.36 |     1.78 |     2.04 |     2.22 |  
-| CUDA Max Memory Consumption        |    2.5   |   2.4  |    2.21 |     2.13 |     2.07 |     2.01 |  
+| CUDA Max Memory Consumption        |    2.5   |   2.4  |    2.21 |     2.13 |     2.07 |     2.01 |   -->
 
 ### OGBN-Arxiv GraphSAGE  
 
