@@ -33,7 +33,7 @@ You can find the cuda memory consumption of different model layers (Graph SAGE m
 2 layer: 13.64GB  
 3 layer: OOM   
 
-- Figure 10 (b)  
+- Figure 13 (b)  
 When GPU meomry constraint is 24 GB.   
 To break the memory wall, Buffalo use 2 micro batches to train 3-layer model.
 `./run_micro_batch_train_diff_layers.sh` it might takes a few minutes.

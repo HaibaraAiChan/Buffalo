@@ -1,20 +1,24 @@
-# Buffalo: Enabling Large-Scale GNN Training via Memory-Efficient Bucketization  
+# Buffalo: Enabling Large-Scale GNN Training via Memory-Efficient Bucketization   
 
 
 
 ## install requirements:
  The framework of Buffalo is developed upon DGL(pytorch backend)  
- We use Ubuntu 20.04, CUDA 12.1 (it's also compatible with Ubuntu18.04, CUDA 11.2, the package version you need to install are denoted in install_requirements.sh).  
- The requirements:  pytorch >= 1.9, DGL >= 0.8
+ We use Ubuntu 20.04, CUDA 12.1 (the package version you need to install are denoted in install_requirements.sh).  
+ The requirements:  pytorch >= 2.1, DGL >= 2.2  
 
 
 `bash install_requirements.sh`.  
 
-## Our main contributions: 
-Buffalo introduces a system addressing the bucket explosion and enabling load balancing between graph partitions for GNN training. 
+## Our main contributions:   
+Buffalo introduces a system addressing the bucket explosion and enabling load balancing between graph partitions for GNN training.  
 
-###image `ubuntu_22.04_CUDA12.1_py3.10_DGL_source_modified_sampler` use the modified dgl sampler      ###
+<!-- ###image `ubuntu_22.04_CUDA12.1_py3.10_DGL_source_modified_sampler` use the modified dgl sampler      ### -->
   
+As we do optimization in DGL to speedup the block generation of Buffalo. Hence, you need install the modified DGL first. The steps are shown below. Or you can run the evalutaion in the node we provied which installed modified DGL and all requirements. 
+`ssh -i passwd.key cc@192.5.87.92`   
+the passwd.key file is located in pytorch/folder
+    
   
 # Install DGL from source
 cd
@@ -23,18 +27,18 @@ cd dgl/
 du -h     1.1GB
 
 
-# CUDA build
-mkdir build
-cd build
-cmake -DUSE_CUDA=ON ..
-make -j120
+# CUDA build  
+mkdir build  
+cd build  
+cmake -DUSE_CUDA=ON ..  
+make -j120  
 
-cd ../python
-sudo python3 setup.py install
-python setup.py build_ext --inplace
+cd ../python  
+sudo python3 setup.py install  
+python setup.py build_ext --inplace  
 
-alias python='python3'
-source ~/.bashrc
+alias python='python3'  
+source ~/.bashrc  
 
 Then use 10 files in https://github.com/HaibaraAiChan/dgl_range_sampler.git to replace the 
 10 files in the original dgl    
@@ -84,16 +88,14 @@ cd ../python
 sudo python3 setup.py install   
 
 
-`Dgl/src/random/cpu/choice.cc​`       ​   
-  YSYChoice​
 
 
 
 
 
-Buffalo provides bucket-level partitioning and scheduling algorithm.   
+<!-- Buffalo provides bucket-level partitioning and scheduling algorithm.    -->
  
-The overall time complexity of Buffalo’s algorithm (algorithm 3 in the paper)can be summarized as follows:  
+<!-- The overall time complexity of Buffalo’s algorithm (algorithm 3 in the paper)can be summarized as follows:  
 
 ### Overall Complexity  
 The algorithm's time complexity is:  
@@ -109,4 +111,4 @@ The algorithm's time complexity is:
 
 
 
- 
+  -->
