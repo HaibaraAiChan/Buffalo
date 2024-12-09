@@ -17,14 +17,15 @@ Buffalo introduces a system addressing the bucket explosion and enabling load ba
   
 As we do optimization in DGL to speedup the block generation of Buffalo. Hence, you need install the modified DGL first. The steps are shown below. Or you can run the evalutaion in the node we provied which installed modified DGL and all requirements. 
 `ssh -i passwd.key cc@192.5.87.92`   
-the passwd.key file is located in pytorch/folder
+the `passwd.key` file is located in the folder `pytorch/`.  
     
   
 # Install DGL from source
 cd  
 git clone --recurse-submodules https://github.com/dmlc/dgl.git  
 cd dgl/  
-du -h      #### it's about 1.1GB   
+<!-- du -h      
+#### it's about 1.1GB    -->
 
 
 #### CUDA build  
