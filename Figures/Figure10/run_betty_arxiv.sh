@@ -17,7 +17,7 @@ run=1
 epoch=20
 logIndent=0
 
-num_batch=(16 32 )
+num_batch=(4 6 8 16 32 )
 
 pMethodList=(REG)
 

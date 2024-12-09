@@ -9,7 +9,7 @@ hidden=1024
 layer=2
 fanout='10,25'
 
-for nb in  4 
+for nb in  4 6 8 16 32 
 do
     echo "---start  $nb batches"
     python buffalo.py \
