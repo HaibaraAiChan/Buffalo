@@ -17,7 +17,7 @@ Buffalo introduces a system addressing the bucket explosion and enabling load ba
   
 As we do optimization in DGL to speedup the block generation of Buffalo. Hence, you need install the modified DGL first. The steps are shown below. Or you can run the evalutaion in the node we provied which installed modified DGL and all requirements. 
 `ssh -i passwd.key cc@192.5.87.92`   
-the `passwd.key` file is located in the folder `pytorch/`.  
+the `passwd.key` file is located in the folder `pytorch/`. If you have trouble accessing the node, you can contact `syang127@ucmerced.edu` directly.
     
   
 # Install DGL from source
