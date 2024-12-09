@@ -21,13 +21,13 @@ the passwd.key file is located in pytorch/folder
     
   
 # Install DGL from source
-cd
-git clone --recurse-submodules https://github.com/dmlc/dgl.git
-cd dgl/
-du -h     1.1GB
+cd  
+git clone --recurse-submodules https://github.com/dmlc/dgl.git  
+cd dgl/  
+du -h      #### it's about 1.1GB   
 
 
-# CUDA build  
+#### CUDA build  
 mkdir build  
 cd build  
 cmake -DUSE_CUDA=ON ..  
