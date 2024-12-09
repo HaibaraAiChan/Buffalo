@@ -10,8 +10,6 @@
 
 `bash install_requirements.sh`.  
 
-## Our main contributions:   
-Buffalo introduces a system addressing the bucket explosion and enabling load balancing between graph partitions for GNN training.  
 
 <!-- ###image `ubuntu_22.04_CUDA12.1_py3.10_DGL_source_modified_sampler` use the modified dgl sampler      ### -->
   
@@ -88,6 +86,8 @@ make -j120
 cd ../python   
 sudo python3 setup.py install   
 
+## Our main contributions:   
+Buffalo introduces a system addressing the bucket explosion and enabling load balancing between graph partitions for GNN training.  
 
 
 
