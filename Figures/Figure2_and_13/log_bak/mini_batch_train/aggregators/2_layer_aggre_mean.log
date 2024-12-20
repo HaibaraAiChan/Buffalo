@@ -1,30 +1,33 @@
-main start at this time 1732855041.964141
+main start at this time 1734648587.3739853
 -----------------------------------------before load data 
  Nvidia-smi: 0.3560791015625 GB
     Memory Allocated: 0.0  GigaBytes
 Max Memory Allocated: 0.0  GigaBytes
 
-ogbn-arxiv
-# Nodes: 169343
-# Edges: 2315598
-# Train: 90941
-# Val: 29799
-# Test: 48603
-# Classes: 40
+#nodes: 2449029
+#edges: 123718024
+#classes: 47
+success----------------------------------------
+# Nodes: 2400608
+# Edges: 123718024
+# Train: 196571
+# Val: 39255
+# Test: 2164782
+# Classes: 47
 
 -----------------------------------------after load data 
  Nvidia-smi: 0.3560791015625 GB
     Memory Allocated: 0.0  GigaBytes
 Max Memory Allocated: 0.0  GigaBytes
 
-in feats:  128
+in feats:  100
  Run 0| Epoch 0 |
  Run 0| Epoch 1 |
  Run 0| Epoch 2 |
  Run 0| Epoch 3 |
  Run 0| Epoch 4 |
 -----------------------------------------after mini batch train 
- Nvidia-smi: 15.04248046875 GB
-    Memory Allocated: 0.1468958854675293  GigaBytes
-Max Memory Allocated: 13.641744136810303  GigaBytes
+ Nvidia-smi: 7.06982421875 GB
+    Memory Allocated: 1.02508544921875  GigaBytes
+Max Memory Allocated: 5.400351047515869  GigaBytes
 

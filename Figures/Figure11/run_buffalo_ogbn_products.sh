@@ -6,13 +6,14 @@ save_path=./log/buffalo
 mkdir $save_path
 dataset=ogbn-products
 hidden=128
-epoch=20
+epoch=6
 layer=2
 fanout='10,25'
 
 for nb in  12
 do
-    echo "---start  $nb batches"
+    echo "---start  $nb batches. It only trains 6 epochs to save time, it will last about 3 min.'
+"
     python buffalo.py \
         --dataset $dataset \
         --selection-method products_25_backpack_bucketing \

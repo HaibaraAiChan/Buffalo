@@ -14,7 +14,7 @@ lr=0.001
 dropout=0.5
 
 run=1
-epoch=10
+epoch=1
 logIndent=0
 cuda_mem_constraint=18.1 # 18.1, 24 GB GPU memory, there is about 6 GB  nvidia-smi memory cost
 

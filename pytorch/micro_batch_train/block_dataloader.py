@@ -93,7 +93,7 @@ def generate_one_block(raw_graph, global_srcnid, global_dstnid, global_eids):
 
 def check_connections_block(batched_nodes_list, current_layer_block):
 	res=[]
-	print('check connections block*********************************')
+	# print('check connections block*********************************')
 
 	induced_src = current_layer_block.srcdata[dgl.NID]
 	eids_global = current_layer_block.edata['_ID']
@@ -170,9 +170,9 @@ def generate_blocks_for_one_layer_block(raw_graph, layer_block, batches_nid_list
 
 	connection_time = sum(check_connection_time)
 	block_gen_time = sum(block_generation_time)
-	print()
-	print('block_gen_time in "generate_blocks_for_one_layer_block" ', block_gen_time)
-	print()
+	# print()
+	# print('block_gen_time in "generate_blocks_for_one_layer_block" ', block_gen_time)
+	# print()
 	return blocks, src_list, dst_list, (connection_time, block_gen_time)
 
 

@@ -27,7 +27,8 @@ more detail you can find in `log/micro_batch_train/2_layer_aggre_lstm_batch_12.l
 
  
 - Figure 2 (b)  
-The result of mini batch train wiith different layers are located in `log/mini_batch_train/layers/`  
+Run `./run_mini_batch_train_diff_layers.sh`.  
+The result of mini batch train with different layers are located in `log/mini_batch_train/layers/`  
 You can find the cuda memory consumption of different model layers (Graph SAGE model +lstm aggreagtor, OGBN-arxiv)
 1 layer: 4.32GB  
 2 layer: 13.64GB  
@@ -37,7 +38,7 @@ You can find the cuda memory consumption of different model layers (Graph SAGE m
 When GPU meomry constraint is 24 GB.   
 To break the memory wall, Buffalo use 2 micro batches to train 3-layer model.
 `./run_micro_batch_train_diff_layers.sh` it might takes a few minutes.
-Then you will get the CUDA memory consumption of 3-layer model is 22.07GB. 
+Then you will get the CUDA memory consumption of 3-layer model in file `log/micro_batch_train/3_layer_aggre_lstm_batch_2.log`, which is 22.07GB. 
 
 
 To save time, we only provide these two example to denote Our Buffalo breaks the memory capacity constraint in Figure 2.

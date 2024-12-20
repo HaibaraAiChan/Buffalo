@@ -8,6 +8,7 @@ dataset=ogbn-arxiv
 hidden=1024
 layer=2
 fanout='10,25'
+echo '---start Buffalo micro batch train: lstm aggregator. It only trains 5 epoch to save time, it will last about 3.5 mins.'
 
 for nb in  4 6 8 16 32 
 do
@@ -22,7 +23,7 @@ do
         --model SAGE \
         --num-hidden $hidden \
         --num-runs 1 \
-        --num-epoch 20 \
+        --num-epoch 5 \
         --aggre lstm \
         --log-indent 3 \
         --lr 1e-3 \

@@ -315,21 +315,21 @@ def run(args, device, data):
 		print('---feature block loading time ', feature_time_list)
 		print()
 		print()
-		print('epoch_time avg  ', np.mean(epoch_time_list[4:]))
-		print('loading_time avg  ', np.mean(loading_time_list[4:]))
+		print('below are the average time (sec)')
+		print('End to end time  ', np.mean(epoch_time_list[4:]))
+		# print('loading_time avg  ', np.mean(loading_time_list[4:]))
 		if args.num_batch>1:
-			
-			print(' data loader gen time avg', np.mean(loader_gen_time_list[4:]))
-			print('	---backpack schedule time avg', np.mean(backpack_time_list[4:]))
-			print('	---connection_check_time avg ',np.mean(connection_check_time_list[4:]))
-			print('	---block_gen_time avg ', np.mean(block_gen_time_list[4:])) 
+			# print(' data loader gen time avg', np.mean(loader_gen_time_list[4:]))
+			print('	---Buffalo scheduling ', np.mean(backpack_time_list[4:]))
+			print('	---Connection check  ',np.mean(connection_check_time_list[4:]))
+			print('	---Block construction  ', np.mean(block_gen_time_list[4:])) 
 
-		print('training time ', np.mean(train_time_list[4:]))
-		print('---feature block loading time ', np.mean(feature_time_list[4:]))
+		# print('training time ', np.mean(train_time_list[4:]))
+		print('	---Data loading ', np.mean(feature_time_list[4:])+ np.mean(loading_time_list[4:]))
 		
 
-		print('pure train time per /epoch ', pure_train_time_list)
-		print('pure train time average ', np.mean(pure_train_time_list[3:]))
+		# print('pure train time list', pure_train_time_list)
+		print('	---Training time on GPU ', np.mean(pure_train_time_list[3:]))
 		# torch.save(model.state_dict(), 'model_state.pth')
 
 def main():

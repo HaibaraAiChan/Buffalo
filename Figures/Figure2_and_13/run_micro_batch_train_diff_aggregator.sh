@@ -14,7 +14,7 @@ lr=0.001
 dropout=0.5
 
 run=1
-epoch=10
+epoch=1
 logIndent=0
 cuda_mem_constraint=18.1 # 18.1, 24 GB GPU memory, there is about 6 GB  nvidia-smi memory cost
 
@@ -33,6 +33,7 @@ mkdir ./log
 mkdir ./log/micro_batch_train
 save_path=./log/micro_batch_train
 mkdir $save_path
+echo '---start Buffalo micro batch train: lstm aggregator. It about 2 min.'
 
 for Aggre in ${AggreList[@]}
 do      

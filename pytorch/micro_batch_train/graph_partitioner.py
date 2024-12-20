@@ -142,7 +142,7 @@ class Graph_Partitioner:  # ----------------------*** split the output layer blo
 		if self.selection_method == "random" or self.selection_method == "range" or self.selection_method=="metis":
 			self.gen_batched_seeds_list()
 		elif self.selection_method == "REG" :
-			print('REG start----................................')
+			print('REG  construction start----................................')
 			ts = time.time()
 			# get_memory('---------================-----------------=============---------REG before start \n')
 			u, v =self.layer_block.edges()[0], self.layer_block.edges()[1] # local edges
@@ -186,6 +186,7 @@ class Graph_Partitioner:  # ----------------------*** split the output layer blo
 			auxiliary_graph_no_diag = dgl.remove_self_loop(auxiliary_graph)
 			print('auxiliary_graph_no_diag---')
 			# res = Counter(auxiliary_graph_no_diag.edata['w'].tolist())
+			print('REG construction end ----................................')
 			tp1 = time.time()
 			partition = dgl.metis_partition(g=auxiliary_graph_no_diag,k=self.args.num_batch)
 			tp2 = time.time()
@@ -195,9 +196,10 @@ class Graph_Partitioner:  # ----------------------*** split the output layer blo
 				res.append(sorted(nids))
 				# print(len(nids))
 			print('REG metis partition end ----................................')
+			print('-'*40)
 			# print('the time spent: ', tp2-ts)
-			print('REG construction  time spent: ', tp1-ts)
-			print('pure dgl.metis_partition the time spent: ', tp2-tp1)
+			print('	---REG Construction (sec): ', tp1-ts)
+			print('	---Metis partition (sec): ', tp2-tp1)
 			self.local_batched_seeds_list=res
 			# print('graph partitioner: local batch seeds list ', res)
 		return

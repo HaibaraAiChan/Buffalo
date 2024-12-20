@@ -4,20 +4,20 @@
 File=Betty_micro_batch_train.py
 
 Data=ogbn-products
-
+# Data=ogbn-arxiv
 model=sage
 seed=1236 
 setseed=True
-GPUmem=False
+# GPUmem=False
 load_full_batch=True
 lr=0.01
 dropout=0.5
 
 run=1
-epoch=10
+epoch=6
 logIndent=0
 
-num_batch=(12 )
+num_batch=(12)
 
 pMethodList=(REG)
 
@@ -33,6 +33,7 @@ AggreList=(lstm)
 
 
 savePath=./log/betty/
+echo '---start mini batch train: 1-layer. It only trains 6 epoch to save time, it will last about 30 min.'
 
 for Aggre in ${AggreList[@]}
 do      
@@ -60,7 +61,6 @@ do
 								--aggre $Aggre \
 								--seed $seed \
 								--setseed $setseed \
-								--GPUmem $GPUmem \
 								--selection-method $pMethod \
 								--re-partition-method $re_partition_method \
 								--num-re-partition $rep \

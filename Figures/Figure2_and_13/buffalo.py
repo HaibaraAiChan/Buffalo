@@ -195,6 +195,7 @@ def run(args, device, data):
 		num_input_list =[]
 		pure_train_time_list=[]
 		for epoch in range(args.num_epochs):
+			print('#--------------------------------- epoch ', epoch)
 			model.train()
 			epoch_start_time = time.time()#
 			loss_sum=0 #
@@ -297,37 +298,37 @@ def run(args, device, data):
 					optimizer.zero_grad()
 					print()
 					see_memory_usage("----------------------------------------full batch")
-			epoch_end_time = time.time()
-			epoch_time_list.append(epoch_end_time-epoch_start_time)
-		print('epoch_time_list ', epoch_time_list)
+			# epoch_end_time = time.time()
+			# epoch_time_list.append(epoch_end_time-epoch_start_time)
+		# print('epoch_time_list ', epoch_time_list)
 
-		print()
-		print('loading_time list  ', loading_time_list)
-		print()
-		if args.num_batch > 1:
-			print(' data loader gen time ', loader_gen_time)
-			print('	---backpack schedule time ', backpack_time_list)
-			print('	---connection_check_time_list ',connection_check_time_list)
-			print('	---block_gen_time_list ', block_gen_time_list)
-		print('training time ',train_time_list)
-		print('---feature block loading time ', feature_time_list)
-		print()
-		print()
-		print('epoch_time avg  ', np.mean(epoch_time_list[4:]))
-		print('loading_time avg  ', np.mean(loading_time_list[4:]))
-		print(' data loader gen time avg', np.mean(loader_gen_time_list[4:]))
-		print('	---backpack schedule time avg', np.mean(backpack_time_list[4:]))
-		print('	---connection_check_time avg ',np.mean(connection_check_time_list[4:]))
-		print('	---block_gen_time avg ', np.mean(block_gen_time_list[4:])) 
+		# print()
+		# print('loading_time list  ', loading_time_list)
+		# print()
+		# if args.num_batch > 1:
+		# 	print(' data loader gen time ', loader_gen_time)
+		# 	print('	---backpack schedule time ', backpack_time_list)
+		# 	print('	---connection_check_time_list ',connection_check_time_list)
+		# 	print('	---block_gen_time_list ', block_gen_time_list)
+		# print('training time ',train_time_list)
+		# print('---feature block loading time ', feature_time_list)
+		# print()
+		# print()
+		# print('epoch_time avg  ', np.mean(epoch_time_list[4:]))
+		# print('loading_time avg  ', np.mean(loading_time_list[4:]))
+		# print(' data loader gen time avg', np.mean(loader_gen_time_list[4:]))
+		# print('	---backpack schedule time avg', np.mean(backpack_time_list[4:]))
+		# print('	---connection_check_time avg ',np.mean(connection_check_time_list[4:]))
+		# print('	---block_gen_time avg ', np.mean(block_gen_time_list[4:])) 
 
-		print('training time ', np.mean(train_time_list[4:]))
-		print('---feature block loading time ', np.mean(feature_time_list[4:]))
+		# print('training time ', np.mean(train_time_list[4:]))
+		# print('---feature block loading time ', np.mean(feature_time_list[4:]))
 		
 
-		print('pure train time per /epoch ', pure_train_time_list)
-		print('pure train time average ', np.mean(pure_train_time_list[3:]))
-		print()
-		print('num_input list ', num_input_list)
+		# print('pure train time per /epoch ', pure_train_time_list)
+		# print('pure train time average ', np.mean(pure_train_time_list[3:]))
+		# print()
+		# print('num_input list ', num_input_list)
 
 def main():
 	# get_memory("-----------------------------------------main_start***************************")

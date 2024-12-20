@@ -1,0 +1,118 @@
+main start at this time 1734649996.7055404
+-----------------------------------------before load data 
+ Nvidia-smi: 0.3560791015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+ogbn-arxiv
+# Nodes: 169343
+# Edges: 2315598
+# Train: 90941
+# Val: 29799
+# Test: 48603
+# Classes: 40
+
+----------------------------------------start of run function 
+ Nvidia-smi: 0.3560791015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+#--------------------------------- epoch  0
+the output layer 
+self.num_batch (get_in_degree_bucketing) 2
+get_in_degree_bucketing dst global nid length 90941
+len(bkt)  13428
+len(bkt)  11706
+len(bkt)  9277
+len(bkt)  7320
+len(bkt)  6222
+len(bkt)  4868
+len(bkt)  4045
+len(bkt)  3472
+len(bkt)  2976
+len(bkt)  2599
+len(bkt)  2203
+len(bkt)  1937
+len(bkt)  1656
+len(bkt)  1434
+len(bkt)  1289
+len(bkt)  1111
+len(bkt)  1030
+len(bkt)  948
+len(bkt)  836
+len(bkt)  807
+len(bkt)  717
+len(bkt)  556
+len(bkt)  519
+len(bkt)  525
+len(bkt)  483
+len(bkt)  409
+len(bkt)  390
+len(bkt)  370
+len(bkt)  329
+len(bkt)  7479
+total indegree bucketing result ,  90941
+the number of total output nodes match :) 
+local nids of zero in-degree  []
+bucket partitioner: bkt_dst_nodes_list_local length  30
+---||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||--
+self.num_batch,  2
+type of fanout_dst_nids  <class 'torch.Tensor'>
+self.K  2
+G_BUCKET_ID_list [[22, 28, 27, 26, 23, 21, 0, 18, 24, 20, 17, 16, 15, 14, 13], [25, 19, 12, 11, 10, 9, 8, 7, 6, 1, 5, 2, 3, 4]]
+Groups_mem_list  [[480, 473, 472, 470, 469, 467, 453, 453, 452, 448, 440, 438, 433, 427, 425], [478, 437, 414, 408, 391, 389, 382, 374, 370, 369, 367, 352, 352, 350]]
+G_BUCKET_ID_list length 2
+backpack scheduling spend time (sec) 0.37221360206604004
+len(g_bucket_nids_list)  2
+len(local_split_batches_nid_list)  2
+current group_mem  6.808912791082916
+current group_mem  5.441532534195497
+batches output list generation spend  0.0009028911590576172
+self.weights_list  [0.3046480685279467, 0.6953519314720533]
+bkt_dst_nodes_list = self.get_in_degree_bucketing() spend:  0.008894920349121094
+self.gen_batches_seeds_list(bkt_dst_nodes_list_local) spend  0.3733229637145996
+self.has_zero_indegree_seeds  False
+num_output  90941
+self.output_nids  90941
+output nodes length match
+global output equals  True
+partition total batch output list spend :  0.44364500045776367
+self.buckets_partition() spend  sec:  0.38225412368774414
+step  0
+----------------------------------------before batch_pred = model(blocks, batch_inputs)
+ Nvidia-smi: 0.62255859375 GB
+    Memory Allocated: 0.10036134719848633  GigaBytes
+Max Memory Allocated: 0.10036134719848633  GigaBytes
+
+----------------------------------------after batch_pred = model(blocks, batch_inputs)
+ Nvidia-smi: 20.70263671875 GB
+    Memory Allocated: 19.77475118637085  GigaBytes
+Max Memory Allocated: 19.971431255340576  GigaBytes
+
+----------------------------------------after loss function
+ Nvidia-smi: 20.70263671875 GB
+    Memory Allocated: 19.77888059616089  GigaBytes
+Max Memory Allocated: 19.971431255340576  GigaBytes
+
+step  1
+----------------------------------------before batch_pred = model(blocks, batch_inputs)
+ Nvidia-smi: 21.47998046875 GB
+    Memory Allocated: 0.16442108154296875  GigaBytes
+Max Memory Allocated: 19.971431255340576  GigaBytes
+
+----------------------------------------after batch_pred = model(blocks, batch_inputs)
+ Nvidia-smi: 22.91943359375 GB
+    Memory Allocated: 21.783398151397705  GigaBytes
+Max Memory Allocated: 22.05919885635376  GigaBytes
+
+----------------------------------------after loss function
+ Nvidia-smi: 22.91943359375 GB
+    Memory Allocated: 21.792821884155273  GigaBytes
+Max Memory Allocated: 22.05919885635376  GigaBytes
+
+----------------------------------------after optimizer
+ Nvidia-smi: 23.79638671875 GB
+    Memory Allocated: 0.21066522598266602  GigaBytes
+Max Memory Allocated: 22.05919885635376  GigaBytes
+
+----------------------------------------------------------pseudo_mini_loss sum 4.020321846008301

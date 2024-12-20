@@ -193,6 +193,7 @@ def run(args, device, data):
 		
 		optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 		for epoch in range(args.num_epochs):
+			print(' Run '+str(run)+'| Epoch '+ str( epoch)+' |')
 			num_src_node =0
 			num_out_node_FL=0
 			gen_block=0
@@ -240,6 +241,7 @@ def run(args, device, data):
 			time_ex=0
 			tts=time.time()
 			for step, (input_nodes, seeds, blocks) in enumerate(block_dataloader):
+				print('step ', step)
 				ttttt=time.time()
 				
 				num_input_nids	+= len(input_nodes)
@@ -341,18 +343,18 @@ def run(args, device, data):
 				logger.add_result(run, (train_acc, val_acc, test_acc))
 					
 				print("Run {:02d} | Epoch {:05d} | Loss {:.4f} | Train {:.4f} | Val {:.4f} | Test {:.4f}".format(run, epoch, loss_sum.item(), train_acc, val_acc, test_acc))
-			else:
-				print(' Run '+str(run)+'| Epoch '+ str( epoch)+' |')
-			print('Number of nodes for computation during this epoch: ', num_src_node)
-			print('Number of first layer input nodes during this epoch: ', num_input_nids)
-			print('Number of first layer output nodes during this epoch: ', num_out_node_FL)
-		if args.eval:
-			logger.print_statistics(run)
+			# else:
+				# print(' Run '+str(run)+'| Epoch '+ str( epoch)+' |')
+			# print('Number of nodes for computation during this epoch: ', num_src_node)
+			# print('Number of first layer input nodes during this epoch: ', num_input_nids)
+			# print('Number of first layer output nodes during this epoch: ', num_out_node_FL)
+	# 	if args.eval:
+	# 		logger.print_statistics(run)
 
-	if args.eval:
-		logger.print_statistics()
-	print(model)
-	count_parameters(model)
+	# if args.eval:
+	# 	logger.print_statistics()
+	# print(model)
+	# count_parameters(model)
 	
 def count_parameters(model):
 	pytorch_total_params = sum(torch.numel(p) for p in model.parameters())

@@ -1,6 +1,6 @@
 To denote time comparison between block generation time of Buffalo and Betty, we use the figure 11 OGBN-products as an example: 2-layer GraphSAGE + LSTM aggregator ogbn-products with 12 micro-batches.  
 
-After running `./run_buffalo_ogbn_products.sh` and `./run_betty_ogbn_products.sh`, you can get the results in the folders `log/buffalo` and `log/betty`.  
+After running `./run_buffalo_ogbn_products.sh` and `./run_betty_ogbn_products.sh`, you can get the results at the end of these files `log/buffalo/nb_12.log` and `log/betty/2-layer-fo-10,25-sage-lstm-h-128-batch-12-gp-REG.log`.  
 
 ogbn-products GraphSAGE fan-out 10, 25 hidden 128  
 | Time Comparison         | Betty       | Buffalo     |  

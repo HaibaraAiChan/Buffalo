@@ -1,4 +1,4 @@
-main start at this time 1732855060.3204815
+main start at this time 1734649899.9195473
 -----------------------------------------before load data 
  Nvidia-smi: 0.3560791015625 GB
     Memory Allocated: 0.0  GigaBytes
@@ -18,3 +18,13 @@ ogbn-arxiv
 Max Memory Allocated: 0.0  GigaBytes
 
 in feats:  128
+ Run 0| Epoch 0 |
+ Run 0| Epoch 1 |
+ Run 0| Epoch 2 |
+ Run 0| Epoch 3 |
+ Run 0| Epoch 4 |
+-----------------------------------------after mini batch train 
+ Nvidia-smi: 5.06005859375 GB
+    Memory Allocated: 0.10931873321533203  GigaBytes
+Max Memory Allocated: 4.310033798217773  GigaBytes
+

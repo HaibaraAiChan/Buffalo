@@ -187,12 +187,14 @@ def run(args, device, data):
 	logger = Logger(args.num_runs, args)
 	dur = []
 	time_block_gen=[]
+	loading_time_list=[]
 	for run in range(args.num_runs):
 		model.reset_parameters()
 		# optimizer = torch.optim.Adam(model.parameters(), lr=args.lr, weight_decay=args.weight_decay)
 		
 		optimizer = torch.optim.Adam(model.parameters(), lr=args.lr)
 		for epoch in range(args.num_epochs):
+			print(' Run '+str(run)+'| Epoch '+ str( epoch)+' |')
 			num_src_node =0
 			num_out_node_FL=0
 			gen_block=0
@@ -203,12 +205,14 @@ def run(args, device, data):
 			loss_sum=0
 			# start of data preprocessing part---s---------s--------s-------------s--------s------------s--------s----
 			if args.load_full_batch:
+				loading_start_time = time.time()#
 				full_batch_dataloader=[]
 				file_name=r'./../../../dataset/fan_out_'+args.fan_out+'/'+args.dataset+'_'+str(epoch)+'_items.pickle'
 				with open(file_name, 'rb') as handle:
 					item=pickle.load(handle)
 					full_batch_dataloader.append(item)
-
+				loading_end_time = time.time()#
+				loading_time_list.append(loading_end_time-loading_start_time)#
 			if args.GPUmem:
 				see_memory_usage("----------------------------------------before generate dataloader block ")
 			
@@ -216,21 +220,21 @@ def run(args, device, data):
 			if args.GPUmem:
 				see_memory_usage("-----------------------------------------after block dataloader generation ")
 			connect_check_time, block_gen_time_total, batch_blocks_gen_time =time_collection
-			print('connection checking time: ', connect_check_time)
-			print('block generation total time ', block_gen_time_total)
-			print('average batch blocks generation time: ', batch_blocks_gen_time)
+			print('	---Connection check (sec): ', connect_check_time)
+			print('	---Block construction (sec) ', block_gen_time_total)
+			# print('average batch blocks generation time: ', batch_blocks_gen_time)
 			# end of data preprocessing part------e---------e-------e----------e------e----------e--------e-------e--
 
 			if epoch >= args.log_indent:
 				gen_block=time.time() - t0
 				time_block_gen.append(time.time() - t0)
-				print('block dataloader generation time/epoch {}'.format(np.mean(time_block_gen)))
+				# print('block dataloader generation time/epoch {}'.format(np.mean(time_block_gen)))
 				tmp_t=time.time()
 			# Loop over the dataloader to sample the computation dependency graph as a list of blocks.
 			
 			pseudo_mini_loss = torch.tensor([], dtype=torch.long)
 			data_loading_t=[]
-			block_to_t=[]
+			feature_block_loading=[]
 			modeling_t=[]
 			loss_cal_t=[]
 			backward_t=[]
@@ -238,135 +242,85 @@ def run(args, device, data):
 			blocks_size=[]
 			num_input_nids=0
 			time_ex=0
+			pure_train_time = 0
 			tts=time.time()
 			for step, (input_nodes, seeds, blocks) in enumerate(block_dataloader):
-				ttttt=time.time()
 				
-				num_input_nids	+= len(input_nodes)
-				num_src_node+=get_compute_num_nids(blocks)
-				num_out_node_FL+=get_FL_output_num_nids(blocks)
-				print('pseudo mini batch '+str(step)+' input nodes size: '+str(len(input_nodes)) )
-				ttttt2=time.time()
-				time_ex=ttttt2-ttttt
-				if args.GPUmem:
-					see_memory_usage("----------------------------------------before load block subtensor ")
-
 				tt1=time.time()
 				batch_inputs, batch_labels = load_block_subtensor(nfeats, labels, blocks, device,args)#------------*
-				tt2=time.time()
-				data_loading_t.append(tt2-tt1)
-				if args.GPUmem:
-					see_memory_usage("----------------------------------------after load block subtensor  ")
-
-
-				data_size_transfer.append(sys.getsizeof(batch_inputs)+sys.getsizeof(batch_labels))
-				# print('for loop block_dataloader item  time: ', tt1-tts)
-				blocks_size.append(sys.getsizeof(blocks))
-				
-				# if args.GPUmem:
-				# 	see_memory_usage("----------------------------------------before block to device ")
-				print('the counter of in-degree of the smallest block in current batch !!!!!!!!!!!!!!_______________!!!!!!!!!!')
-				graph_in = Counter(blocks[-1].in_degrees().tolist())
-				print(graph_in)
-				print()
-    
-				tt51=time.time()
 				blocks = [block.int().to(device) for block in blocks]#------------*
 				tt5=time.time()
-				block_to_t.append(tt5-tt51)
-				if args.GPUmem:
-					see_memory_usage("----------------------------------------after blocks to device ")
+				feature_block_loading.append(tt5-tt1)
 
 
 				# Compute loss and prediction
-				if args.GPUmem:
-					see_memory_usage("----------------------------------------before batch_pred = model(blocks, batch_inputs) ")
-
-				tt3=time.time()
 				batch_pred = model(blocks, batch_inputs)#------------*
-				tt4=time.time()
-				modeling_t.append(tt4-tt3)
-
-				if args.GPUmem:
-					see_memory_usage("----------------------------------------- after batch_pred = model(blocks, batch_inputs) ")
-				tt61=time.time()
 				pseudo_mini_loss = loss_fcn(batch_pred, batch_labels)#------------*
-				# print('----------------------------------------------------------pseudo_mini_loss ', pseudo_mini_loss)
 				pseudo_mini_loss = pseudo_mini_loss*weights_list[step]#------------*
-				tt6=time.time()
-				loss_cal_t.append(tt6-tt61)
-				# print('----------------------------------------------------------pseudo_mini_loss ', pseudo_mini_loss)
-				if args.GPUmem:
-					see_memory_usage("-----------------------------------------after loss calculation")
 				pseudo_mini_loss.backward()#------------*
 
 				loss_sum += pseudo_mini_loss#------------*
-				tt8=time.time()
-				backward_t.append(tt8-tt6)
-				if args.GPUmem:
-					see_memory_usage("-----------------------------------------after loss backward")
-
-			
-			tte=time.time()
+				pure_train_time += time.time()-tt5
+				
+			time13 = time.time()
 			optimizer.step()
-			if args.GPUmem:
-					see_memory_usage("-----------------------------------------after optimizer step")
 			optimizer.zero_grad()
 			ttend=time.time()
-			if args.GPUmem:
-					see_memory_usage("-----------------------------------------after optimizer zero grad")
-			print('times | data loading | block to device | model prediction | loss calculation | loss backward |  optimizer step |')
-			print('      |'+str(mean(data_loading_t))+' |'+str(mean(block_to_t))+' |'+str(mean(modeling_t))+' |'+str(mean(loss_cal_t))+' |'+str(mean(backward_t))+' |'+str(ttend-tte)+' |')
-			print('----------------------------------------------------------pseudo_mini_loss sum ' + str(loss_sum.tolist()))
-			
+			pure_train_time += (ttend-time13)
+
 			if epoch >= args.log_indent:
 				tmp_t2=time.time()
+				# pure_train_time = ttend-tts-sum(feature_block_loading)
+				
+				# pure_train_time_list.append(pure_train_time)
 				full_epoch=time.time() - t0
 				dur.append(time.time() - t0)
-				print('Total (block generation + training)time/epoch {}'.format(np.mean(dur)))
-				# print('Training 1 time/epoch {}'.format(np.mean(full_epoch-gen_block)))
-				print('Training time/epoch {}'.format(tmp_t2-tmp_t-time_ex))
-				print('Training time without block to device /epoch {}'.format(tmp_t2-tmp_t-time_ex-sum(block_to_t)))
-				# print('Training time without total dataloading part /epoch {}'.format(tmp_t2-tmp_t-sum(block_to_t)-sum(data_loading_t)))
-				print('Training time without total dataloading part /epoch {}'.format(sum(modeling_t)+sum(loss_cal_t)+sum(backward_t)+ttend-tte))
-				print('load block tensor time/epoch {}'.format(np.sum(data_loading_t)))
-				print('block to device time/epoch {}'.format(np.sum(block_to_t)))
-				print('input features size transfer per epoch {}'.format(np.sum(data_size_transfer)/1024/1024/1024))
-				print('blocks size to device per epoch {}'.format(np.sum(blocks_size)/1024/1024/1024))
+				# print('All time are int the unit second')
+				
+				print('	---Data loading (sec) {}'.format((loading_end_time-loading_start_time)+(sum(feature_block_loading))))
+				print('	---Training time on GPU (sec) {}'.format(pure_train_time))
+				print('---End to end time (sec) {}'.format(np.mean(dur)))
+				# print('Training time without block to device /epoch {}'.format(tmp_t2-tmp_t-time_ex-sum(block_to_t)))
+				# # print('Training time without total dataloading part /epoch {}'.format(tmp_t2-tmp_t-sum(block_to_t)-sum(data_loading_t)))
+				# print('Training time without total dataloading part /epoch {}'.format(sum(modeling_t)+sum(loss_cal_t)+sum(backward_t)+ttend-tte))
+				# print('load block tensor time/epoch {}'.format(np.sum(data_loading_t)))
+				# print('block to device time/epoch {}'.format(np.sum(block_to_t)))
+				# print('input features size transfer per epoch {}'.format(np.sum(data_size_transfer)/1024/1024/1024))
+				# print('blocks size to device per epoch {}'.format(np.sum(blocks_size)/1024/1024/1024))
 
-			if args.eval:
+			# if args.eval:
 			
-				train_acc, val_acc, test_acc = evaluate(model, g, nfeats, labels, train_nid, val_nid, test_nid, device, args)
+			# 	train_acc, val_acc, test_acc = evaluate(model, g, nfeats, labels, train_nid, val_nid, test_nid, device, args)
 
-				logger.add_result(run, (train_acc, val_acc, test_acc))
+			# 	logger.add_result(run, (train_acc, val_acc, test_acc))
 					
-				print("Run {:02d} | Epoch {:05d} | Loss {:.4f} | Train {:.4f} | Val {:.4f} | Test {:.4f}".format(run, epoch, loss_sum.item(), train_acc, val_acc, test_acc))
-			else:
-				print(' Run '+str(run)+'| Epoch '+ str( epoch)+' |')
-			print('Number of nodes for computation during this epoch: ', num_src_node)
-			print('Number of first layer input nodes during this epoch: ', num_input_nids)
-			print('Number of first layer output nodes during this epoch: ', num_out_node_FL)
-		if args.eval:
-			logger.print_statistics(run)
+			# 	print("Run {:02d} | Epoch {:05d} | Loss {:.4f} | Train {:.4f} | Val {:.4f} | Test {:.4f}".format(run, epoch, loss_sum.item(), train_acc, val_acc, test_acc))
+			# else:
+			# 	print(' Run '+str(run)+'| Epoch '+ str( epoch)+' |')
+			# print('Number of nodes for computation during this epoch: ', num_src_node)
+			# print('Number of first layer input nodes during this epoch: ', num_input_nids)
+			# print('Number of first layer output nodes during this epoch: ', num_out_node_FL)
+	# 	if args.eval:
+	# 		logger.print_statistics(run)
 
-	if args.eval:
-		logger.print_statistics()
+	# if args.eval:
+	# 	logger.print_statistics()
 	# print(model)
 	# count_parameters(model)
 	
-def count_parameters(model):
-	pytorch_total_params = sum(torch.numel(p) for p in model.parameters())
-	print('total model parameters size ', pytorch_total_params)
-	print('trainable parameters')
+# def count_parameters(model):
+# 	pytorch_total_params = sum(torch.numel(p) for p in model.parameters())
+# 	print('total model parameters size ', pytorch_total_params)
+# 	print('trainable parameters')
 	
-	for name, param in model.named_parameters():
-		if param.requires_grad:
-			print (name + ', '+str(param.data.shape))
-	print('-'*40)
-	print('un-trainable parameters')
-	for name, param in model.named_parameters():
-		if not param.requires_grad:
-			print (name, param.data.shape)
+# 	for name, param in model.named_parameters():
+# 		if param.requires_grad:
+# 			print (name + ', '+str(param.data.shape))
+# 	print('-'*40)
+# 	print('un-trainable parameters')
+# 	for name, param in model.named_parameters():
+# 		if not param.requires_grad:
+# 			print (name, param.data.shape)
 
 def main():
 	# get_memory("-----------------------------------------main_start***************************")
@@ -380,9 +334,9 @@ def main():
 	argparser.add_argument('--GPUmem', type=bool, default=False)
 	argparser.add_argument('--load-full-batch', type=bool, default=True)
 	# argparser.add_argument('--root', type=str, default='../my_full_graph/')
-	# argparser.add_argument('--dataset', type=str, default='ogbn-arxiv')
+	argparser.add_argument('--dataset', type=str, default='ogbn-arxiv')
 	# argparser.add_argument('--dataset', type=str, default='ogbn-mag')
-	argparser.add_argument('--dataset', type=str, default='ogbn-products')
+	# argparser.add_argument('--dataset', type=str, default='ogbn-products')
 
 	argparser.add_argument('--aggre', type=str, default='lstm')
 	# argparser.add_argument('--aggre', type=str, default='mean')

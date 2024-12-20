@@ -2,40 +2,34 @@ computation info data collection start ......
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 betty result: 
 number of batches: 4
-	end to end time per epoch (sec) 54.96293745040894
-	cuda max memory consumption(GB)  21.841665744781494
+	end to end time per epoch (sec) 50.13798851966858
+	cuda max memory consumption(GB)  21.79440975189209
 number of batches: 6
-	end to end time per epoch (sec) 49.52008081674576
-	cuda max memory consumption(GB)  15.215813636779785
+	end to end time per epoch (sec) 47.64619421958923
+	cuda max memory consumption(GB)  14.910831928253174
 number of batches: 8
-	end to end time per epoch (sec) 48.03156380653381
-	cuda max memory consumption(GB)  12.239295959472656
-number of batches: 10
-	end to end time per epoch (sec) 49.40856540997823
-	cuda max memory consumption(GB)  10.309792518615723
+	end to end time per epoch (sec) 46.18317985534668
+	cuda max memory consumption(GB)  11.995575904846191
 number of batches: 16
-	end to end time per epoch (sec) 50.473547792434694
-	cuda max memory consumption(GB)  7.722456932067871
+	end to end time per epoch (sec) 45.07438616752624
+	cuda max memory consumption(GB)  7.439769744873047
 number of batches: 32
-	end to end time per epoch (sec) 50.32111834287643
-	cuda max memory consumption(GB)  4.187028884887695
+	end to end time per epoch (sec) 47.281475114822385
+	cuda max memory consumption(GB)  4.208364963531494
 =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
 buffalo result: 
 number of batches: 4
-	end to end time per epoch (sec) 5.210423082113266
+	end to end time per epoch (sec) 5.220727205276489
 	cuda max memory consumption(GB)  18.397813320159912
 number of batches: 6
-	end to end time per epoch (sec) 5.364082917571068
-	cuda max memory consumption(GB)  15.227076053619385
+	end to end time per epoch (sec) 5.363381385803223
+	cuda max memory consumption(GB)  15.220298767089844
 number of batches: 8
-	end to end time per epoch (sec) 5.6073621064424515
-	cuda max memory consumption(GB)  12.118079662322998
-number of batches: 10
-	end to end time per epoch (sec) 5.775443658232689
-	cuda max memory consumption(GB)  10.277886867523193
+	end to end time per epoch (sec) 5.63327431678772
+	cuda max memory consumption(GB)  12.111769676208496
 number of batches: 16
-	end to end time per epoch (sec) 6.349125355482101
-	cuda max memory consumption(GB)  7.353972434997559
+	end to end time per epoch (sec) 6.423465251922607
+	cuda max memory consumption(GB)  7.3449249267578125
 number of batches: 32
-	end to end time per epoch (sec) 7.362594157457352
+	end to end time per epoch (sec) 7.224999666213989
 	cuda max memory consumption(GB)  4.761394500732422

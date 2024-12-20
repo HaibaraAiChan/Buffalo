@@ -205,9 +205,9 @@ def main():
 	argparser.add_argument('--GPUmem', type=bool, default=True)
 	argparser.add_argument('--load-full-batch', type=bool, default=False)
 	# argparser.add_argument('--root', type=str, default='../my_full_graph/')
-	argparser.add_argument('--dataset', type=str, default='ogbn-arxiv')
+	# argparser.add_argument('--dataset', type=str, default='ogbn-arxiv')
 
-	# argparser.add_argument('--dataset', type=str, default='ogbn-products')
+	argparser.add_argument('--dataset', type=str, default='ogbn-products')
 	# argparser.add_argument('--aggre', type=str, default='lstm')
 	# argparser.add_argument('--dataset', type=str, default='cora')
 	# argparser.add_argument('--dataset', type=str, default='karate')
@@ -217,7 +217,7 @@ def main():
 	argparser.add_argument('--num-runs', type=int, default=1)
 	# argparser.add_argument('--num-epochs', type=int, default=)
 	# argparser.add_argument('--num-runs', type=int, default=10)
-	argparser.add_argument('--num-epochs', type=int, default=5)
+	argparser.add_argument('--num-epochs', type=int, default=10)
 	argparser.add_argument('--num-hidden', type=int, default=256)
 
 	argparser.add_argument('--num-layers', type=int, default=2)
