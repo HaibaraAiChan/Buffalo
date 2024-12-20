@@ -33,7 +33,7 @@ AggreList=(lstm)
 
 
 savePath=./log/betty/
-echo '---start mini batch train: 1-layer. It only trains 6 epoch to save time, it will last about 30 min.'
+echo '---start Betty micro batch train: 2-layer. It only trains 6 epoch to save time, it will last about 30 min.'
 
 for Aggre in ${AggreList[@]}
 do      

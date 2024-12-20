@@ -14,7 +14,7 @@ lr=0.01
 dropout=0.5
 
 run=1
-epoch=10
+epoch=3
 logIndent=0
 
 num_batch=(16 24 32 )
@@ -49,7 +49,7 @@ do
 						
 						for nb in ${num_batch[@]}
 						do
-							
+							echo "---start  $nb batches. It will cost about 7 mins."
 							for rep in ${num_re_partition[@]}
 							do
 								wf=${layers}-layer-fo-${fan_out}-sage-${Aggre}-h-${hidden}-batch-${nb}-gp-${pMethod}.log

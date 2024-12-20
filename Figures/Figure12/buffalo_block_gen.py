@@ -318,11 +318,11 @@ def run(args, device, data):
 		# print('epoch_time avg  ', np.mean(epoch_time_list[4:]))
 		# print('loading_time avg  ', np.mean(loading_time_list[4:]))
 		if args.num_batch>1:
-			
-			print(' data loader gen time avg', np.mean(loader_gen_time_list[4:]))
-			print('	---backpack schedule time avg', np.mean(backpack_time_list[4:]))
-			print('	---connection_check_time avg ',np.mean(connection_check_time_list[4:]))
-			print('	---block_gen_time avg ', np.mean(block_gen_time_list[4:])) 
+			print()
+			print(' data loader gen time avg', np.mean(loader_gen_time_list[2:]))
+			print('	---backpack schedule time avg', np.mean(backpack_time_list[2:]))
+			print('	---connection check (sec) ',np.mean(connection_check_time_list[2:]))
+			print('	---block construction (sec) ', np.mean(block_gen_time_list[2:])) 
 
 		# print('training time ', np.mean(train_time_list[4:]))
 		# print('---feature block loading time ', np.mean(feature_time_list[4:]))

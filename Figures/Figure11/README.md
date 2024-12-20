@@ -5,15 +5,15 @@ After running `./run_buffalo_ogbn_products.sh` and `./run_betty_ogbn_products.sh
 ogbn-products GraphSAGE fan-out 10, 25 hidden 128  
 | Time Comparison         | Betty       | Buffalo     |  
 |-------------------------|-------------|-------------|  
-| Buffalo scheduling       | -           | 2.69        |  
-| REG construction         | 70.27       | -           |  
-| Metis partition          | 21.50       | -           |  
-| Connection check         | 13.66       | 8.17        |  
-| Block construction       | 25.30       | 4.29        |  
-| Data loading             | 1.43        | 3.52        |  
-| Training time on GPU     | 2.37        | 2.28        |  
+| Buffalo scheduling       | -           | 2.49        |  
+| REG construction         | 69.07       | -           |  
+| Metis partition          | 19.90       | -           |  
+| Connection check         | 12.67       | 6.32        |  
+| Block construction       | 23.71       | 3.80        |  
+| Data loading             | 2.02        | 3.46        |  
+| Training time on GPU     | 2.31        | 2.27        |  
 |-------------------------|-------------|-------------|  
-| **AVG end-to-end time**  | 144.61      | 21.83       |
+| **AVG end-to-end time**  | 136.26      | 19.18       |
   
 
-Since the machines used differ from those in the paper where the data was collected, the exact times may vary from Figure 11. However, the scale remains consistent, showing that Buffalo can reduce the end-to-end time by 83% compared to Betty in this example.
+Since the machines used differ from those in the paper where the data was collected, the exact times may vary from Figure 11. However, the scale remains consistent, showing that Buffalo can reduce the end-to-end time by 85% compared to Betty in this example.

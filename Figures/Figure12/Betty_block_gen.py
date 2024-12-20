@@ -209,23 +209,23 @@ def run(args, device, data):
 					item=pickle.load(handle)
 					full_batch_dataloader.append(item)
 
-			if args.GPUmem:
-				see_memory_usage("----------------------------------------before generate dataloader block ")
+			# if args.GPUmem:
+			# 	see_memory_usage("----------------------------------------before generate dataloader block ")
 			# import pdb; pdb.set_trace()
 
 			block_dataloader, weights_list, time_collection = generate_dataloader_block(g, full_batch_dataloader, args)
-			if args.GPUmem:
-				see_memory_usage("-----------------------------------------after block dataloader generation ")
+			# if args.GPUmem:
+			# 	see_memory_usage("-----------------------------------------after block dataloader generation ")
 			connect_check_time, block_gen_time_total, batch_blocks_gen_time =time_collection
-			print('connection checking time: ', connect_check_time)
-			print('block generation total time ', block_gen_time_total)
-			print('average batch blocks generation time: ', batch_blocks_gen_time)
+			print('connection check (sec): ', connect_check_time)
+			print('block construction (sec): ', block_gen_time_total)
+			# print('average batch blocks generation time: ', batch_blocks_gen_time)
 			# end of data preprocessing part------e---------e-------e----------e------e----------e--------e-------e--
 
 			if epoch >= args.log_indent:
 				gen_block=time.time() - t0
 				time_block_gen.append(time.time() - t0)
-				print('block dataloader generation time/epoch {}'.format(np.mean(time_block_gen)))
+				# print('block dataloader generation time/epoch {}'.format(np.mean(time_block_gen)))
 				tmp_t=time.time()
 			# Loop over the dataloader to sample the computation dependency graph as a list of blocks.
 			

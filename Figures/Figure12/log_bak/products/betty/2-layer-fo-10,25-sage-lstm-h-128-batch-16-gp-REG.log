@@ -337,7 +337,7 @@ block_gen_time in "generate_blocks_for_one_layer_block"  21.681881427764893
     Memory Allocated: 0.000934600830078125  GigaBytes
 Max Memory Allocated: 0.000934600830078125  GigaBytes
 
-connection checking time:  16.630513429641724
-block generation total time  28.11395001411438
+connection check (sec) :  16.630513429641724
+block construction (sec) :  28.11395001411438
 average batch blocks generation time:  1.7571218758821487
 block dataloader generation time/epoch 143.86736059188843

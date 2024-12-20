@@ -15,17 +15,17 @@ ogbn-products GraphSAGE fan-out 10,25 hidden 128
 | buffalo:average block generation time per epoch |     11.21 |     12.51  |     14.74 |
 
 log/products/betty/:
-when number of micro-batches equals 16: in 2-layer-fo-10,25-sage-lstm-h-128-batch-16-gp-REG.log  
+when number of micro-batches equals 16: at the end of file in `2-layer-fo-10,25-sage-lstm-h-128-batch-16-gp-REG.log`  
 average block generation time includes:  
 connection checking time:  16.63
 block construction  time  28.11
 
 
 log/products/buffalo/
-when number of batches equals 16: in nb_16.log  
+when number of batches equals 16: at the end of file `nb_16.log`   
 average block generation time includes:  
----connection_check_time avg  7.19   
----block_construction_time avg  4.02   
+---connection_check time avg  7.19   
+---block_construction time avg  4.02   
 total 11.21 seconds  
 
-
+The exact times you run may vary from the above table. However, the scale between betty and buffalo remains consistent.
