@@ -2,6 +2,8 @@
 
 
 # save_path=./log/2-layer-10,25/SAGE/h_1024
+mkdir ./log
+mkdir ./log/products
 save_path=./log/products/buffalo
 mkdir $save_path
 dataset=ogbn-products

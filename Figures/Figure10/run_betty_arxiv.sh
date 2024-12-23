@@ -31,8 +31,11 @@ fan_out_list=(10,25)
 hiddenList=(1024)
 AggreList=(lstm)
 
-
+# mkdir ./log
+# mkdir ./log/arxiv
 savePath=./log/arxiv/betty/
+# mkdir $savePath
+mkdir -p $savePath 
 echo '---start Betty micro batch train: lstm aggregator. '
 echo '---It trains for only 5 epochs with different batch sizes to save time, taking approximately 5 minutes for each batch size, totaling around 25 minutes.'
 for Aggre in ${AggreList[@]};do

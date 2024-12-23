@@ -31,7 +31,9 @@ fan_out_list=(10,25)
 hiddenList=(128)
 AggreList=(lstm)
 
-
+mkdir ./log
+mkdir ./log/products
+mkdir ./log/products/betty/
 savePath=./log/products/betty/
 
 for Aggre in ${AggreList[@]}

@@ -31,7 +31,8 @@ fan_out_list=(10,25)
 hiddenList=(128)
 AggreList=(lstm)
 
-
+mkdir ./log
+mkdir ./log/betty/
 savePath=./log/betty/
 echo '---start Betty micro batch train: 2-layer. It only trains 6 epoch to save time, it will last about 30 min.'
 

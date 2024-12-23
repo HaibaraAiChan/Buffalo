@@ -7,10 +7,10 @@ As hundreds of pre-generated full batch data will cost a lot, here, to simplify 
 The pre-generated full batch data is stored in ~\dataset\  
 as we use fanout 10,25, these full batch data of arxiv are stored in folder  ~\dataset\fan_out_10,25  
 
-`./run_micro_batch_train.sh` (It might spends one hour. The bottleneck is REG graph partition,  we will optimize it later)
+`./run_micro_batch_train.sh` 
 Then you will get the training data for full batch, 2, 4 and 8 micro batch train in folder log/.  
 - *2-layer-aggre-sage-lstm-batch-XXX.log*  
-After that, collect the test accuracy to draw the convergence curve.  
+After that, collect the loss to draw the convergence curve.  
   
 ![Figure 17](./Figure17.png)  
 

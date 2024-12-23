@@ -2,8 +2,11 @@
 
 
 # save_path=./log/2-layer-10,25/SAGE/h_1024
+mkdir ./log
+mkdir ./log/arxiv
 save_path=./log/arxiv/buffalo
 mkdir $save_path
+
 dataset=ogbn-arxiv
 hidden=1024
 layer=2
