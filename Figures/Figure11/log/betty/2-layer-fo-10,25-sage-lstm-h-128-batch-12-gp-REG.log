@@ -1,0 +1,127 @@
+main start at this time 1735049492.2312543
+#nodes: 2449029
+#edges: 123718024
+#classes: 47
+success----------------------------------------
+# Nodes: 2400608
+# Edges: 123718024
+# Train: 196571
+# Val: 39255
+# Test: 2164782
+# Classes: 47
+
+in feats:  100
+ Run 0| Epoch 0 |
+REG  construction start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+REG construction end ----................................
+Convert a graph into a bidirected graph: 3.391 seconds, peak memory: 23.932 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 23.932 GB
+Metis partitioning: 11.764 seconds, peak memory: 25.209 GB
+Split the graph: 4.419 seconds
+Construct subgraphs: 0.022 seconds
+REG metis partition end ----................................
+----------------------------------------
+	---REG Construction (sec):  67.00525975227356
+	---Metis partition (sec):  19.63954997062683
+	---Connection check (sec):  13.835875272750854
+	---Block construction (sec)  29.326597690582275
+	---Data loading (sec) 1.9480524063110352
+	---Training time on GPU (sec) 5.245173931121826
+---End to end time (sec) 140.87593364715576
+ Run 0| Epoch 1 |
+REG  construction start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+REG construction end ----................................
+Convert a graph into a bidirected graph: 3.330 seconds, peak memory: 46.855 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 46.855 GB
+Metis partitioning: 11.733 seconds, peak memory: 46.855 GB
+Split the graph: 4.279 seconds
+Construct subgraphs: 0.022 seconds
+REG metis partition end ----................................
+----------------------------------------
+	---REG Construction (sec):  66.81139349937439
+	---Metis partition (sec):  19.409553050994873
+	---Connection check (sec):  13.177719354629517
+	---Block construction (sec)  26.295801639556885
+	---Data loading (sec) 1.8436346054077148
+	---Training time on GPU (sec) 2.4971351623535156
+---End to end time (sec) 137.4648255109787
+ Run 0| Epoch 2 |
+REG  construction start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+REG construction end ----................................
+Convert a graph into a bidirected graph: 3.392 seconds, peak memory: 47.635 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 47.635 GB
+Metis partitioning: 11.846 seconds, peak memory: 48.944 GB
+Split the graph: 4.439 seconds
+Construct subgraphs: 0.430 seconds
+REG metis partition end ----................................
+----------------------------------------
+	---REG Construction (sec):  66.88797402381897
+	---Metis partition (sec):  20.1527202129364
+	---Connection check (sec):  12.892481565475464
+	---Block construction (sec)  24.753336668014526
+	---Data loading (sec) 2.023263692855835
+	---Training time on GPU (sec) 2.279893159866333
+---End to end time (sec) 135.9139792919159
+ Run 0| Epoch 3 |
+REG  construction start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+REG construction end ----................................
+Convert a graph into a bidirected graph: 3.310 seconds, peak memory: 50.229 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 50.229 GB
+Metis partitioning: 11.666 seconds, peak memory: 51.511 GB
+Split the graph: 4.470 seconds
+Construct subgraphs: 0.417 seconds
+REG metis partition end ----................................
+----------------------------------------
+	---REG Construction (sec):  68.45969152450562
+	---Metis partition (sec):  19.908358812332153
+	---Connection check (sec):  13.12943983078003
+	---Block construction (sec)  24.748599767684937
+	---Data loading (sec) 1.9329705238342285
+	---Training time on GPU (sec) 2.2900285720825195
+---End to end time (sec) 135.46515041589737
+ Run 0| Epoch 4 |
+REG  construction start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+REG construction end ----................................
+Convert a graph into a bidirected graph: 3.302 seconds, peak memory: 52.036 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 52.036 GB
+Metis partitioning: 11.826 seconds, peak memory: 52.811 GB
+Split the graph: 4.290 seconds
+Construct subgraphs: 0.494 seconds
+REG metis partition end ----................................
+----------------------------------------
+	---REG Construction (sec):  66.49027109146118
+	---Metis partition (sec):  19.956815481185913
+	---Connection check (sec):  13.169697284698486
+	---Block construction (sec)  25.185368299484253
+	---Data loading (sec) 1.883948564529419
+	---Training time on GPU (sec) 2.2807836532592773
+---End to end time (sec) 135.01193084716797
+ Run 0| Epoch 5 |
+REG  construction start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+REG construction end ----................................
+Convert a graph into a bidirected graph: 3.380 seconds, peak memory: 53.568 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 53.568 GB
+Metis partitioning: 11.700 seconds, peak memory: 53.568 GB
+Split the graph: 4.234 seconds
+Construct subgraphs: 0.444 seconds
+REG metis partition end ----................................
+----------------------------------------
+	---REG Construction (sec):  69.57506656646729
+	---Metis partition (sec):  19.803952932357788
+	---Connection check (sec):  12.741505861282349
+	---Block construction (sec)  24.29593563079834
+	---Data loading (sec) 1.923783779144287
+	---Training time on GPU (sec) 2.2801895141601562
+---End to end time (sec) 134.8998460372289

@@ -1,0 +1,78 @@
+main start at this time 1735053671.4175305
+-----------------------------------------before load data 
+ Nvidia-smi: 0.3560791015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+#nodes: 2449029
+#edges: 123718024
+#classes: 47
+success----------------------------------------
+# Nodes: 2400608
+# Edges: 123718024
+# Train: 196571
+# Val: 39255
+# Test: 2164782
+# Classes: 47
+
+----------------------------------------start of run function 
+ Nvidia-smi: 0.3560791015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+in feats:  100
+----------------------------------------before model to device 
+ Nvidia-smi: 0.3560791015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+----------------------------------------after model to device
+ Nvidia-smi: 0.51904296875 GB
+    Memory Allocated: 0.000934600830078125  GigaBytes
+Max Memory Allocated: 0.000934600830078125  GigaBytes
+
+REG  construction start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+REG construction end ----................................
+Convert a graph into a bidirected graph: 3.415 seconds, peak memory: 23.922 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 23.922 GB
+Metis partitioning: 12.925 seconds, peak memory: 25.056 GB
+Split the graph: 2.606 seconds
+Construct subgraphs: 0.378 seconds
+REG metis partition end ----................................
+----------------------------------------
+	---REG Construction (sec):  69.0802059173584
+	---Metis partition (sec):  19.368187427520752
+connection check (sec):  16.938822507858276
+block construction (sec):  37.31900072097778
+REG  construction start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+REG construction end ----................................
+Convert a graph into a bidirected graph: 3.368 seconds, peak memory: 27.294 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 27.294 GB
+Metis partitioning: 12.928 seconds, peak memory: 28.377 GB
+Split the graph: 2.832 seconds
+Construct subgraphs: 0.038 seconds
+REG metis partition end ----................................
+----------------------------------------
+	---REG Construction (sec):  68.36886811256409
+	---Metis partition (sec):  19.21171283721924
+connection check (sec):  14.762547254562378
+block construction (sec):  28.285129070281982
+REG  construction start----................................
+auxiliary_graph remove nodes with degree zero and non output nodes---
+auxiliary_graph_no_diag---
+REG construction end ----................................
+Convert a graph into a bidirected graph: 3.356 seconds, peak memory: 28.377 GB
+Construct multi-constraint weights: 0.000 seconds, peak memory: 28.377 GB
+Metis partitioning: 12.716 seconds, peak memory: 29.146 GB
+Split the graph: 2.401 seconds
+Construct subgraphs: 0.465 seconds
+REG metis partition end ----................................
+----------------------------------------
+	---REG Construction (sec):  67.22156238555908
+	---Metis partition (sec):  18.984325408935547
+connection check (sec):  15.395229816436768
+block construction (sec):  27.754852294921875

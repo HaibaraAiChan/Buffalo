@@ -1,0 +1,118 @@
+main start at this time 1735096948.3859813
+-----------------------------------------before load data 
+ Nvidia-smi: 0.3560791015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+ogbn-arxiv
+# Nodes: 169343
+# Edges: 2315598
+# Train: 90941
+# Val: 29799
+# Test: 48603
+# Classes: 40
+
+----------------------------------------start of run function 
+ Nvidia-smi: 0.3560791015625 GB
+    Memory Allocated: 0.0  GigaBytes
+Max Memory Allocated: 0.0  GigaBytes
+
+#--------------------------------- epoch  0
+the output layer 
+self.num_batch (get_in_degree_bucketing) 2
+get_in_degree_bucketing dst global nid length 90941
+len(bkt)  13428
+len(bkt)  11706
+len(bkt)  9277
+len(bkt)  7320
+len(bkt)  6222
+len(bkt)  4868
+len(bkt)  4045
+len(bkt)  3472
+len(bkt)  2976
+len(bkt)  2599
+len(bkt)  2203
+len(bkt)  1937
+len(bkt)  1656
+len(bkt)  1434
+len(bkt)  1289
+len(bkt)  1111
+len(bkt)  1030
+len(bkt)  948
+len(bkt)  836
+len(bkt)  807
+len(bkt)  717
+len(bkt)  556
+len(bkt)  519
+len(bkt)  525
+len(bkt)  483
+len(bkt)  409
+len(bkt)  390
+len(bkt)  370
+len(bkt)  329
+len(bkt)  7479
+total indegree bucketing result ,  90941
+the number of total output nodes match :) 
+local nids of zero in-degree  []
+bucket partitioner: bkt_dst_nodes_list_local length  30
+---||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||-----||--
+self.num_batch,  2
+type of fanout_dst_nids  <class 'torch.Tensor'>
+self.K  2
+G_BUCKET_ID_list [[22, 28, 27, 26, 23, 21, 0, 18, 24, 20, 17, 16, 15, 14, 13], [25, 19, 12, 11, 10, 9, 8, 7, 6, 1, 5, 2, 3, 4]]
+Groups_mem_list  [[480, 473, 472, 470, 469, 467, 453, 453, 452, 448, 440, 438, 433, 427, 425], [478, 437, 414, 408, 391, 389, 382, 374, 370, 369, 367, 352, 352, 350]]
+G_BUCKET_ID_list length 2
+backpack scheduling spend time (sec) 0.37267065048217773
+len(g_bucket_nids_list)  2
+len(local_split_batches_nid_list)  2
+current group_mem  6.808912791082916
+current group_mem  5.441532534195497
+batches output list generation spend  0.0009377002716064453
+self.weights_list  [0.3046480685279467, 0.6953519314720533]
+bkt_dst_nodes_list = self.get_in_degree_bucketing() spend:  0.008944988250732422
+self.gen_batches_seeds_list(bkt_dst_nodes_list_local) spend  0.3738384246826172
+self.has_zero_indegree_seeds  False
+num_output  90941
+self.output_nids  90941
+output nodes length match
+global output equals  True
+partition total batch output list spend :  0.444624662399292
+self.buckets_partition() spend  sec:  0.38282012939453125
+step  0
+----------------------------------------before batch_pred = model(blocks, batch_inputs)
+ Nvidia-smi: 0.62255859375 GB
+    Memory Allocated: 0.10036897659301758  GigaBytes
+Max Memory Allocated: 0.10036897659301758  GigaBytes
+
+----------------------------------------after batch_pred = model(blocks, batch_inputs)
+ Nvidia-smi: 20.79833984375 GB
+    Memory Allocated: 19.806035041809082  GigaBytes
+Max Memory Allocated: 20.00271511077881  GigaBytes
+
+----------------------------------------after loss function
+ Nvidia-smi: 20.79833984375 GB
+    Memory Allocated: 19.81016445159912  GigaBytes
+Max Memory Allocated: 20.00271511077881  GigaBytes
+
+step  1
+----------------------------------------before batch_pred = model(blocks, batch_inputs)
+ Nvidia-smi: 21.57568359375 GB
+    Memory Allocated: 0.16474628448486328  GigaBytes
+Max Memory Allocated: 20.00271511077881  GigaBytes
+
+----------------------------------------after batch_pred = model(blocks, batch_inputs)
+ Nvidia-smi: 22.88427734375 GB
+    Memory Allocated: 21.788025856018066  GigaBytes
+Max Memory Allocated: 22.065284729003906  GigaBytes
+
+----------------------------------------after loss function
+ Nvidia-smi: 22.88427734375 GB
+    Memory Allocated: 21.797449588775635  GigaBytes
+Max Memory Allocated: 22.065284729003906  GigaBytes
+
+----------------------------------------after optimizer
+ Nvidia-smi: 23.97998046875 GB
+    Memory Allocated: 0.21063709259033203  GigaBytes
+Max Memory Allocated: 22.065284729003906  GigaBytes
+
+----------------------------------------------------------pseudo_mini_loss sum 4.019399166107178
