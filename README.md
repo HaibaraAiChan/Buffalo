@@ -5,7 +5,7 @@
 ## install requirements:
  The framework of Buffalo is developed upon DGL(pytorch backend)  
  We use Ubuntu 20.04, CUDA 12.1 (the package version you need to install are denoted in install_requirements.sh).  
- The requirements:  pytorch >= 2.1, DGL >= 2.2  
+ The requirements:  pytorch >= 2.1, DGL >= 2.2   
 
 
 `bash install_requirements.sh`.  
@@ -13,7 +13,7 @@
 
 <!-- ###image `ubuntu_22.04_CUDA12.1_py3.10_DGL_source_modified_sampler` use the modified dgl sampler      ### -->
   
-As we do optimization in DGL to speedup the block generation of Buffalo. Hence, you need install the modified DGL first. The steps are shown below.
+As we do optimization in DGL to speedup the block generation of Buffalo. Hence, you need install the modified DGL (shown below) first. The steps are shown below.
  <!-- Or you can run the evalutaion in the node we provied which installed modified DGL and all requirements. 
 `ssh -i passwd.key cc@192.5.87.75`   
 the `passwd.key` file is located in the folder `pytorch/`. If you have trouble accessing the node, you can contact `syang127@ucmerced.edu` directly. -->
